@@ -1,6 +1,6 @@
 using System;
 
-namespace ParksClient.Models
+namespace ParksAPI.Models
 {
     public class ErrorViewModel
     {

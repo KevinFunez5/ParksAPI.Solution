@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ParksClient.Models;
+using ParksAPI.Models;
 
-namespace ParksClient.Controllers
+namespace ParksAPI.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,7 +20,8 @@ namespace ParksClient.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var allParks = Park.GetParks().OrderByDescending(m => m.Rating);
+            return View(allParks);
         }
 
         public IActionResult Privacy()
